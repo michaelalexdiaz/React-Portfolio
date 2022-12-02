@@ -9,7 +9,7 @@ import selfie from '../../assets/images/IMG_0591.jpg';
 const bio = () => {
     return (
         <>
-            <Grid container justifyContent="center" border="solid" padding={2} spacing={2}>
+            <Grid container justifyContent="center" border="solid" padding={2} spacing={1}>
                 <Grid item xs={4} md={2}>
                 <Typography align="center">
                     <Avatar alt="Michael Diaz" src={selfie} sx={{width: 1, height: 1}}/>
