@@ -7,19 +7,27 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import ConnectedTvSharpIcon from '@mui/icons-material/ConnectedTvSharp';
+import Resume from '../../assets/other/Michael Diaz resume.pdf'
 
-const pages = ['About Me', 'Portfolio', 'Contact', 'Resume'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({pageState, setPageState}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  const handleOpenBioPage = () => {
+    setPageState({...pageState, bio: true, work: false, contact: false})
+  }
+  const handleOpenWorkPage = () => {
+    setPageState({...pageState, bio: false, work: true, contact: false})
+  }
+  const handleOpenContactPage = () => {
+    setPageState({...pageState, bio: false, work: false, contact: true})
+  }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -87,11 +95,29 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem
+                onClick={handleOpenBioPage}
+                sx={{ my: 0, color: 'Red', display: 'block' }}
+              >
+                About Me
+              </MenuItem>
+              <MenuItem
+                onClick={handleOpenWorkPage}
+                sx={{ my: 0, color: 'Red', display: 'block' }}
+              >
+                Projects
+              </MenuItem>
+              <MenuItem
+                onClick={handleOpenContactPage}
+                sx={{ my: 0, color: 'Red', display: 'block' }}
+              >
+                Contact
+              </MenuItem>
+              <a href={Resume} target="_blank" rel="noreferrer">
+              <MenuItem sx={{ my: 0, color: 'Red', display: 'block' }}>
+                Resume
+              </MenuItem>
+              </a>
             </Menu>
           </Box>
           <ConnectedTvSharpIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -114,21 +140,35 @@ function ResponsiveAppBar() {
             MICHAEL
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                onClick={handleOpenBioPage}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                About Me
               </Button>
-            ))}
+              <Button
+                onClick={handleOpenWorkPage}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Projects
+              </Button>
+              <Button
+                onClick={handleOpenContactPage}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Contact
+              </Button>
+              <a href={Resume} target="_blank" rel="noreferrer">
+              <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                Resume
+              </Button>
+              </a>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
               </IconButton>
             </Tooltip>
             <Menu
