@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-portfolio/static/css/main.12b36498.css",
+    "main.js": "/react-portfolio/static/js/main.6118cbeb.js",
+    "static/media/Michael Diaz resume.pdf": "/react-portfolio/static/media/Michael Diaz resume.28779997b9a1919f5ac4.pdf",
+    "static/media/IMG_0591.jpg": "/react-portfolio/static/media/IMG_0591.035aa6a452c64af71633.jpg",
+    "static/media/Magic_8_Ball.png": "/react-portfolio/static/media/Magic_8_Ball.e0b88f559e6867848a69.png",
+    "index.html": "/react-portfolio/index.html",
+    "main.12b36498.css.map": "/react-portfolio/static/css/main.12b36498.css.map",
+    "main.6118cbeb.js.map": "/react-portfolio/static/js/main.6118cbeb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.12b36498.css",
+    "static/js/main.6118cbeb.js"
+  ]
+}
