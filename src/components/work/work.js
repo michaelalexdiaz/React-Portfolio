@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Ball from '../../assets/images/Magic_8_Ball.png';
+import Workout from '../../assets/images/workouticon.png';
 import Card from '../card';
 
 const Work = () => {
@@ -18,10 +19,10 @@ const Work = () => {
         Image: Ball       
     },
     {
-        Title: 'Magic 8 Ball',
-        Github: 'https://github.com/hhealing123/Ask-the-8-Ball',
+        Title: 'Workout Tracker',
+        Github: 'https://github.com/hhealing123/Workout-Tracker',
         Webpage: 'https://hhealing123.github.io/Ask-the-8-Ball/login.html',
-        Image: Ball       
+        Image: Workout       
     }
     ]
 
